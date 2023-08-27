@@ -4,11 +4,6 @@
 局部图片放大效果
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c64cb9e66db448c9a43398ee449db648.png)
  视频转换后带雪花特效,凑合看吧, [视频地址](https://streamja.com/obkVn)
-
-<br>
-<div style="width:100%;height:0px;position:relative;padding-bottom:56.327%;"><iframe src="https://streamja.com/embed/XWOzy" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;"></iframe></div>
-<br>
-
 # 准备工作
 ## 安装FFmpeg
 电脑上安装`ffpeg`处理视频并设置环境变量, windows可以参考[FFmpeg的安装教程](https://www.cnblogs.com/chadlas/p/15911072.html)这篇博客安装 
@@ -672,11 +667,15 @@ if __name__ == '__main__':
 	```bash
 	 color = tuple ([int(x) for x in color])  #设置为整数
 	```
-# 一些优化方向
+## 一些优化方向
 1. Sklearnex加速KMeans计算
 `sklearnex`是一个`sklearn`加速包，大约可以提升几倍到千倍的速度。它是针对`Intel`平台的，只对`Intel CPU有`效，且CPU性能越好加速效果越显著	
 2. 使用GPU
 有很多GPU版本的`KMeans`算法包，大多数基于`cuda`或者`torch、tensorflow`的。
+3. 代码中用的字符是`1234567890`,可以尝试用其他字符代替
+## 一些建议
+被转换视频建议选择一些小的视频不然会很耗时间
+
 # 参考
 1. [FFmpeg的安装教程](https://www.cnblogs.com/chadlas/p/15911072.html)
 2. [Python小程序:视频转彩色字符动画](https://www.bilibili.com/video/BV1sQ4y1Y7P2/)
